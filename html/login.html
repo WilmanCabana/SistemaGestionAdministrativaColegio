@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Gestión Administrativa</title>
+
+    <link rel="stylesheet" href="/SistemaGestionAdministrativaColegio/css/login.css">
+</head>
+<body>
+    <!--Óó-->
+    <!--Encabezado-->
+    <header id="header">
+        <div id="breadcrumb">
+            <a href="/SistemaGestionAdministrativaColegio/index.html">Inicio</a> / Inicio de sesión
+        </div>
+    </header>
+
+    <!--Contenido principal-->
+    <main id="content">
+        <section id="section-title">
+            <div id="container-title">
+                <p id="welcome">Bienvenido a</p>
+                <h1 id="title">Servicio de matrícula y gestión de pagos</h1>
+            </div>
+            <div id="container-img-login">
+                <img src="/SistemaGestionAdministrativaColegio/assets/img/login.png" alt="login">
+            </div>
+        </section>
+        
+        <section id="section-login">
+            <div id="container-top-login">
+                <img id="img-logo" src="/SistemaGestionAdministrativaColegio/assets/img/logo.png" alt="logo">
+                <h2 id="session-title">Inicio de sesión</h2>
+            </div>
+
+            <div id="container-info">
+                <svg class="info-icon">
+                    <use xlink:href="/SistemaGestionAdministrativaColegio/assets/icons/sprite.svg#info"/>
+                </svg>
+                <span id="info-description">Ingrese con su cuenta institucional</span>
+            </div>
+
+            <form id="form-login">
+                <div class="dates-login">
+                    <label class="login-label">Correo institucional</label>
+                    <input class="login-input" type="email" placeholder="Ej.usuario@unimagdalena.edu.co">
+                </div>
+
+                <div class="dates-login">
+                    <label class="login-label">Contraseña</label>
+                    <input class="login-input" type="password" placeholder="Contraseña">
+                </div>
+
+                <div id="container-restore">
+                    <a id="restore-text" href="#">¿Olvidó su Contraseña?</a>
+                </div>
+
+                <button id="btn-login">Iniciar sesión</button>
+            </form>
+
+            <div id="container-back">
+                <a id="back-text" href="/SistemaGestionAdministrativaColegio/index.html
+                ">Volver al inicio</a>
+            </div>
+
+            <div id="container-help">
+                <p id="help-text">Si presenta algún inconveniente con el inicio de sesión por favor envíe un correo a <span id="help-email">admin@gmail.com</span></p>
+            </div>
+        </section>
+    </main>
+
+    <!--Footer | Pie de página-->
+    <footer>
+        <div id="container-footer">
+            <div id="container-img-footer">
+                <img id="buildings-img" src="/SistemaGestionAdministrativaColegio/assets/img/limitInicio.png" alt="edificios">
+            </div>
+            <span id="copyright">BoxawsYY © 2025</span>
+        </div>
+    </footer>
+
+    <script src="/SistemaGestionAdministrativaColegio/js/login.js"></script>
+</body>
+</html>

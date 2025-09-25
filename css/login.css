@@ -1,0 +1,273 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #ffffff;
+    color: #333333;
+    line-height: 1.6;
+}
+
+#breadcrumb{
+    background: #ffffff;
+    padding: 40px 20px 10px 50px;
+    font-size: 14px;
+    max-width: 900px;
+}
+
+#breadcrumb a{
+    color: #1257b2;
+    text-decoration: none;
+}
+
+#breadcrumb a:hover{
+    text-decoration: underline;
+}
+
+#content{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+#section-title{
+    flex: 1;
+    max-width: 500px;
+}
+
+#welcome{
+    color: #666666;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+#title{
+    color: #003a6b;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+#section-login{
+    flex: 1;
+    max-width: 450px;
+
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 40px;
+}
+
+#container-top-login{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#session-title{
+    color: #000000;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#container-info{
+    background: #ebf5fd;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #2c5282;
+}
+
+.info-icon{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+#info-description{
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.dates-login{
+    margin-bottom: 10px;
+}
+
+#form-login{
+    text-align: center;
+
+}
+
+.login-label{
+    display: block;
+    text-align: left;
+    color: #000000;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.login-input{
+    width: 100%;
+    text-align: left;
+    padding: 4px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.login-input:focus{
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.login-input::placeholder{
+    color: #a0aec0;
+}
+
+#container-restore{
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+#container-restore a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #3182ce;
+}
+
+#container-restore:hover{
+    text-decoration: underline;
+}
+
+#btn-login{
+    background-color: #28a745;
+    color: #ffffff;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#container-back{
+    text-align: center;
+}
+
+#container-back a{
+    text-decoration: none;
+    color: #3182ce;
+    font-size: 14px;
+}
+
+#container-back a{
+    text-decoration: underline;
+}
+
+#container-help{
+    margin-top: 20px;
+    font-size: 13px;
+    font-style: italic;
+}
+
+#container-help span{
+    color: #3182ce;
+    font-style: normal;
+}
+
+#container-footer{
+    background-color: #004a87;
+    height: 110px;
+    align-items: center;
+    text-align: center;
+}
+
+#container-img-footer{
+    background-color: #00589f;
+    margin-bottom: 10px;
+}
+
+#copyright{
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* Estilos para mensajes de error y éxito */
+.mensaje-error, .mensaje-exito {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.mensaje-error {
+    background-color: #fee;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.mensaje-exito {
+    background-color: #eff8ef;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.error-icon, .exito-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* Estilo para inputs con error */
+.login-input.error {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+}
+
+/* Estilo para botón deshabilitado */
+#btn-login:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Mejoras de usabilidad */
+.login-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+
+
+@media (max-width: 800px) {
+    #buildings-img{
+        opacity: 0;;
+    }
+}
+
+@media (max-width: 600px) {
+    #content {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+}

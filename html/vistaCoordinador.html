@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinador - Gestión Administrativa</title>
+
+    <link rel="stylesheet" href="/SistemaGestionAdministrativaColegio/css/coordinador.css">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <header class="sidebar-header">
+                <div class="user-info">
+                    <div class="user-avatar">JD</div>
+                    <div class="user-details">
+                        <h3>Juan Pérez</h3>
+                        <span class="user-role">Coordinador</span>
+                    </div>
+                </div>
+            </header>
+
+            <nav class="nav-menu">
+                <section class="nav-section">
+                    <h4 class="nav-section-title">Principal</h4>
+                    <button class="nav-item active" data-view="dashboard">
+                        <span class="nav-icon">📊</span>
+                        Dashboard
+                    </button>
+                </section>
+
+                <section class="nav-section">
+                    <h4 class="nav-section-title">Gestión de Cursos</h4>
+                    <button class="nav-item" data-view="create-course">
+                        <span class="nav-icon">➕</span>
+                        Registrar Curso
+                    </button>
+                    <button class="nav-item" data-view="course-students">
+                        <span class="nav-icon">👥</span>
+                        Lista de Estudiantes
+                    </button>
+                    <button class="nav-item" data-view="schedule-course">
+                        <span class="nav-icon">📅</span>
+                        Cronogramas de Cursos
+                    </button>
+                </section>
+
+                <section class="nav-section">
+                    <h4 class="nav-section-title">Gestión de Grupos</h4>
+                    <button class="nav-item" data-view="create-group">
+                        <span class="nav-icon">👥</span>
+                        Crear Grupo
+                    </button>
+                    <button class="nav-item" data-view="assign-students">
+                        <span class="nav-icon">✅</span>
+                        Asignar Estudiantes
+                    </button>
+                    <button class="nav-item" data-view="group-schedules">
+                        <span class="nav-icon">🕐</span>
+                        Cronograma de Grupos
+                    </button>
+                </section>
+
+                <section class="nav-section">
+                    <h4 class="nav-section-title">Reportes</h4>
+                    <button class="nav-item" data-view="enrollment-report">
+                        <span class="nav-icon">📈</span>
+                        Reporte de Matrículas
+                    </button>
+                    <button class="nav-item" data-view="student-report">
+                        <span class="nav-icon">📋</span>
+                        Reporte de Estudiantes
+                    </button>
+                </section>
+            </nav>
+
+            <footer class="logout-section">
+                <button class="logout-btn" onclick="logout()">
+                    <span>🚪</span> Cerrar Sesión
+                </button>
+            </footer>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-content">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú de navegación">☰</button>
+                    <h1 class="page-title" id="pageTitle">Dashboard</h1>
+                    <div class="header-actions">
+                        <button class="notification-btn" aria-label="Notificaciones">
+                            🔔
+                            <span class="notification-badge">3</span>
+                        </button>
+                        <span>Coordinador</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="content-area" id="contentArea">
+                <!-- Dashboard View -->
+                <article class="view active" id="dashboard">
+                    <section class="dashboard-grid">
+                        <div class="stat-card courses">
+                            <div class="stat-title">Cursos Activos</div>
+                            <div class="stat-value">12</div>
+                            <div class="stat-description">En el semestre actual</div>
+                        </div>
+                        <div class="stat-card students">
+                            <div class="stat-title">Estudiantes</div>
+                            <div class="stat-value">245</div>
+                            <div class="stat-description">Matriculados</div>
+                        </div>
+                        <div class="stat-card groups">
+                            <div class="stat-title">Grupos</div>
+                            <div class="stat-value">28</div>
+                            <div class="stat-description">Grupos creados</div>
+                        </div>
+                        <div class="stat-card reports">
+                            <div class="stat-title">Reportes</div>
+                            <div class="stat-value">8</div>
+                            <div class="stat-description">Generados este mes</div>
+                        </div>
+                    </section>
+
+                    <section class="content-card">
+                        <header class="card-header">
+                            <h2 class="card-title">Actividad Reciente</h2>
+                        </header>
+                        <div class="card-content">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Curso</th>
+                                        <th scope="col">Acción</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Programación I</td>
+                                        <td>Grupo creado</td>
+                                        <td>24/09/2025</td>
+                                        <td><span class="status-badge status-active">Activo</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Matemáticas II</td>
+                                        <td>Estudiantes asignados</td>
+                                        <td>23/09/2025</td>
+                                        <td><span class="status-badge status-active">Activo</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Base de Datos</td>
+                                        <td>Cronograma actualizado</td>
+                                        <td>22/09/2025</td>
+                                        <td><span class="status-badge status-active">Activo</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- Create Course View -->
+                <article class="view" id="create-course">
+                    <section class="content-card">
+                        <header class="card-header">
+                            <h2 class="card-title">Registrar Nuevo Curso</h2>
+                        </header>
+                        <div class="card-content">
+                            <form>
+                                <fieldset>
+                                    <legend class="visually-hidden">Información del curso</legend>
+                                    <div class="form-group">
+                                        <label class="form-label" for="course-name">Nombre del Curso</label>
+                                        <input type="text" class="form-input" id="course-name" name="course-name" placeholder="Ej. Programación Orientada a Objetos" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="course-code">Código</label>
+                                        <input type="text" class="form-input" id="course-code" name="course-code" placeholder="Ej. CS101" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="course-credits">Créditos</label>
+                                        <input type="number" class="form-input" id="course-credits" name="course-credits" min="1" max="8" placeholder="3" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="course-program">Programa</label>
+                                        <select class="form-select" id="course-program" name="course-program" required>
+                                            <option value="">Seleccione un programa</option>
+                                            <option value="sistemas">Ingeniería de Sistemas</option>
+                                            <option value="industrial">Ingeniería Industrial</option>
+                                            <option value="civil">Ingeniería Civil</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="course-description">Descripción</label>
+                                        <textarea class="form-input" id="course-description" name="course-description" rows="4" placeholder="Descripción del curso..."></textarea>
+                                    </div>
+                                </fieldset>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Registrar Curso</button>
+                                    <button type="button" class="btn btn-secondary">Cancelar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- Course Students View -->
+                <article class="view" id="course-students">
+                    <section class="content-card">
+                        <header class="card-header">
+                            <h2 class="card-title">Lista de Estudiantes por Curso</h2>
+                        </header>
+                        <div class="card-content">
+                            <div class="form-group">
+                                <label class="form-label" for="select-course">Seleccionar Curso</label>
+                                <select class="form-select" id="select-course" name="select-course">
+                                    <option value="">Seleccione un curso</option>
+                                    <option value="prog1">Programación I</option>
+                                    <option value="mat2">Matemáticas II</option>
+                                    <option value="bd">Base de Datos</option>
+                                </select>
+                            </div>
+                            <table class="table">
+                                <caption class="visually-hidden">Lista de estudiantes matriculados en el curso seleccionado</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Programa</th>
+                                        <th scope="col">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2021001</td>
+                                        <td>Ana María García</td>
+                                        <td>agarcia@est.unimagdalena.edu.co</td>
+                                        <td>Ing. Sistemas</td>
+                                        <td><span class="status-badge status-active">Matriculado</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2021002</td>
+                                        <td>Carlos Rodríguez</td>
+                                        <td>crodriguez@est.unimagdalena.edu.co</td>
+                                        <td>Ing. Sistemas</td>
+                                        <td><span class="status-badge status-active">Matriculado</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- Schedule Course View -->
+                <article class="view" id="schedule-course">
+                    <section class="content-card">
+                        <header class="card-header">
+                            <h2 class="card-title">Cronograma de Cursos</h2>
+                        </header>
+                        <div class="card-content">
+                            <p>Aquí se mostraría el cronograma de cursos con calendario interactivo.</p>
+                            <button class="btn btn-primary">Crear Cronograma</button>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- Create Group View -->
+                <article class="view" id="create-group">
+                    <section class="content-card">
+                        <header class="card-header">
+                            <h2 class="card-title">Crear Nuevo Grupo</h2>
+                        </header>
+                        <div class="card-content">
+                            <form>
+                                <fieldset>
+                                    <legend class="visually-hidden">Información del grupo</legend>
+                                    <div class="form-group">
+                                        <label class="form-label" for="group-course">Curso</label>
+                                        <select class="form-select" id="group-course" name="group-course" required>
+                                            <option value="">Seleccione un curso</option>
+                                            <option value="prog1">Programación I</option>
+                                            <option value="mat2">Matemáticas II</option>
+                                            <option value="bd">Base de Datos</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="group-number">Número de Grupo</label>
+                                        <input type="text" class="form-input" id="group-number" name="group-number" placeholder="Ej. Grupo 01" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="group-professor">Profesor</label>
+                                        <select class="form-select" id="group-professor" name="group-professor" required>
+                                            <option value="">Seleccione un profesor</option>
+                                            <option value="prof1">Dr. Juan Martínez</option>
+                                            <option value="prof2">Dra. Ana López</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="group-capacity">Capacidad Máxima</label>
+                                        <input type="number" class="form-input" id="group-capacity" name="group-capacity" min="10" max="50" placeholder="30" required>
+                                    </div>
+                                </fieldset>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-success">Crear Grupo</button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- Assign Students View -->
+                <article class="view" id="assign-students">
+                    <section class="content-card">
+                        <header class="card-header">
+                            <h2 class="card-title">Asignar Estudiantes a Grupos</h2>
+                        </header>
+                        <div class="card-content">
+                            <p>Funcionalidad para asignar estudiantes a grupos específicos.</p>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- Group Schedules View -->
+                <article class="view" id="group-schedules">
+                    <section class="content-card">
+                        <header class="card-header">
+                            <h2 class="card-title">Cronograma de Grupos</h2>
+                        </header>
+                        <div class="card-content">
+                            <p>Gestión de horarios y cronogramas de grupos.</p>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- Enrollment Report View -->
+                <article class="view" id="enrollment-report">
+                    <section class="content-card">
+                        <header class="card-header">
+                            <h2 class="card-title">Reporte de Matrículas</h2>
+                        </header>
+                        <div class="card-content">
+                            <p>Reportes detallados sobre matrículas por curso y programa.</p>
+                            <button class="btn btn-primary">Generar Reporte</button>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- Student Report View -->
+                <article class="view" id="student-report">
+                    <section class="content-card">
+                        <header class="card-header">
+                            <h2 class="card-title">Reporte de Estudiantes</h2>
+                        </header>
+                        <div class="card-content">
+                            <p>Reportes sobre estudiantes matriculados y su progreso académico.</p>
+                            <button class="btn btn-primary">Generar Reporte</button>
+                        </div>
+                    </section>
+                </article>
+            </section>
+        </main>
+    </div><h3 class="card-title">Asignar Estudiantes a Grupos</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Funcionalidad para asignar estudiantes a grupos específicos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group Schedules View -->
+                <div class="view" id="group-schedules">
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Cronograma de Grupos</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Gestión de horarios y cronogramas de grupos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enrollment Report View -->
+                <div class="view" id="enrollment-report">
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Reporte de Matrículas</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Reportes detallados sobre matrículas por curso y programa.</p>
+                            <button class="btn btn-primary">Generar Reporte</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student Report View -->
+                <div class="view" id="student-report">
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Reporte de Estudiantes</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Reportes sobre estudiantes matriculados y su progreso académico.</p>
+                            <button class="btn btn-primary">Generar Reporte</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/SistemaGestionAdministrativaColegio/js/coordinador.js"></script>
+</body>
+</html>
