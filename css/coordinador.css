@@ -372,6 +372,12 @@ body {
     border-left: 4px solid #27ae60;
 }
 
+#img-logo{
+    width: 100px;
+    box-shadow: 0 0 40px rgba(52, 152, 219, 0.3);
+    border-radius: 15%;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .app-container {

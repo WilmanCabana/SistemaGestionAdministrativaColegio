@@ -120,7 +120,7 @@ function mostrarExito(mensaje) {
             <use xlink:href="/SistemaGestionAdministrativaColegio/assets/icons/sprite.svg#check"/>
         </svg>
         <span>${mensaje}</span>
-    `;
+    `; //Hace falta agregar al sprite el svg check, pero funciona bien aun sin este
     
     form.insertBefore(mensajeExito, form.firstChild);
     

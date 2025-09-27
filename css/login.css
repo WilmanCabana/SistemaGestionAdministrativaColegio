@@ -73,6 +73,10 @@ body{
     text-align: center;
 }
 
+#img-logo{
+    width: 90px;
+}
+
 #session-title{
     color: #000000;
     font-size: 1.3rem;
@@ -189,6 +193,12 @@ body{
 #container-help span{
     color: #3182ce;
     font-style: normal;
+}
+
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 #container-footer{
